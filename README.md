@@ -1,1 +1,1 @@
-*JavaScript Learning*
+**JavaScript Learning**
