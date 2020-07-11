@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>animation</title>
+    <style type="text/css">
+        body{
+            background-color: pink;
+            color: grey;
+            margin: 15px;
+            text-align: center;
+        }
+        .wrapper{
+            background-color: red;
+            height: 500px;
+            width: 500px;
+        }
+        .animateBox{
+            float: left;
+            width: 75px;
+            height: 100px;
+            margin: 10px;
+            background: #FFF url('http://placekitten.com/g/75/100/') no-repeat;
+            }
+    </style>
+</head>
+<body>
+    <div id="wrapper"></div>
+    <script>
+
+
+
+        var x;
+        for(x=0;x<20;x++) {
+
+            setTimeout(function(){
+
+                var box = document.createElement('div');
+                box.className = 'animateBox';
+                document.getElementById('wrapper').appendChild(box);
+
+
+
+            },500*x);
+
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        letter checker
+    </title>
+    <style type="text/css">
+        body{
+            background-color: pink;
+            color: grey;
+            margin: 15px;
+            text-align: center;
+        }
+        input{
+            border: none;
+            border-bottom: 1px solid grey;
+            background-color: pink;
+        }
+        button{
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: skyblue;
+        }
+    </style>
+
+</head>
+<body>
+    <form>
+        <label for="name">Enter name</label>
+        <input type="text" name="name" id = 'nameInput'  required>
+        <button type="submit" id="submit"> Submit</button>
+    </form>
+        <p id="err"></p>
+    <script type="text/javascript">
+        submit = document.getElementById('submit')
+        submit.addEventListener('click', function(){
+            name = document.getElementById('nameInput').value
+            if (name.length <= 6) {
+            document.getElementById('err').innerHTML = 'To smol name'
+  }
+        });
+    </script>
+</body>

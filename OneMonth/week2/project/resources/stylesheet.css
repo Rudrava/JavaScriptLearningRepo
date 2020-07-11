@@ -1,0 +1,100 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: monospace;
+	font-size: 16px;
+	background-color: skyblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/*text-align: center;
+	align-items: center;
+*/
+}
+
+/*heading*/
+
+.header{
+	background-color: lightgreen;
+	margin: 5px;
+	padding: 5px;
+
+}
+
+/*searchbox*/
+
+.search{
+	justify-content: center;
+	align-items: center;
+	margin: 5%;
+	padding: 5%;
+	border: 1px solid azure;
+	border-radius: 5px;
+}
+
+/*text box*/
+.text-inp{
+	width: 65%;
+	border: none;
+	margin: 5px;
+	padding: 5px;
+	background-color: skyblue;
+	border-bottom: 1px solid black;
+	font-size: 75%;	
+	color: hotpink;
+	transition: width 0.3s linear;
+	transition-timing-function: ease-in-out;
+}
+
+
+
+.text-inp:hover{
+	width: 75%;
+	border-bottom: 2px solid azure;	
+}
+
+.text-inp:focus{
+	outline: none;
+}
+
+/*BUTTON*/
+button{
+	float: right;
+	width: 15%;
+	margin: 1% ;
+	padding: 5px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid grey;
+	box-shadow: 3px 3px 8px grey;
+	color: azure;
+	background-color: grey;
+	transition: width 0.3s linear;
+	transition-timing-function: ease-in-out;
+
+}
+button:focus{
+	outline: none;
+}
+button:hover{
+	width: 19%;
+}
+
+
+
+#wrapper{
+	background-color: azure;
+	margin: 15px;
+	padding: 5%; 
+	
+	/*justify-content: space-around;*/
+}
+
+#container{
+	display: inline-flex;
+	margin: 1%;
+	padding: auto;
+}
