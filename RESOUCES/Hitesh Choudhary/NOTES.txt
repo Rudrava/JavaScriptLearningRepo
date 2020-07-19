@@ -1,0 +1,544 @@
+JS
+**
+
+
+
+Just a note all the elements of javascript we write has to be connected to the
+HTML code off ours ("INdex.html")
+
+for whiich  we need to add the link to the js script in the html code as
+
+it cna be done in two sections of the HTML code
+
+1. Head section
+2. Body section
+
+But the best practise is to put it in the  body section but there are exceptions to these
+
+
+so the syntaax is
+
+<script src="<filename>.js></script>
+
+we can also write cde directly in side the script tag but its not feasible
+if we are working on a project having tons off line s of code
+
+example
+
+
+    <script src="index.js"> </script>      <!-- //code from the script in diff file-->
+
+
+    <script>
+        console.log("HEllo WOrld Directly from the tag");   //js directly from script tag
+    </script>
+
+
+*******************************************************************************************
+
+VARIABLES
+**********
+
+So javaScript alsoo has that tyyppical box assingment type VARIABLES defination
+
+the general syntax is
+let <vaar_name> and assingment can also be done in the same line
+you do not need to specify the type of data LIKE PYTHON
+
+and before ES-6
+variables were declared as
+
+var <vaar_name>
+
+but this has some cons
+
+
+so we use
+eq:-
+
+let name = 'RUdrava Mukherjee';
+let age = 19;
+*******************************************************************************************
+
+CONSTANTS
+**********
+
+
+i dont know about any other lang but JAVA SCRIPT has a concept of a constant
+
+IF u want a value of a variable to not cahnge rather stay the same through out execution
+
+then rather using let just use const
+
+eg
+const  <var_name> = value
+
+so suppose price=10
+and we dont eant this to cahge any time
+
+so if we write
+
+        const price = 10
+        price = 5
+
+
+  then we would jeust get a simpple error that
+
+        index.js:6 Uncaught TypeError: Assignment to constant variable.
+
+********************************************************************************************
+
+variable TYPES
+
+As in javaScript We donot ned to assing the type of variables
+while declaration
+so at the time of assinging of value a variable is set to its corres data or variable type
+
+as per that JS can have two different sets of VARIABLE TYPES
+
+1. Primitive / Value Types
+2. Reference type
+
+1. PRIMITIVE TYPES
+
+    1. String literals:-    assign a string to a variable
+                            eg:- let name= 'Rudrava';
+    2. Nummber literals :-  assing a Nummber to a variable
+                            eg:-let age = 20;
+
+    3. Booleans literals:-  assing either 'true' or 'false'  to a variable
+                            eg:- studying = true
+
+    4. NULL and undefined :-
+                            READ THE WHOLE PARA NEXT
+
+
+                            Is the variable null:
+
+                            if (a === null)
+                            // or
+                            if (a == null) // but see note below
+                            ...but note the latter will also be true if a is undefined.
+
+                            Is it undefined:
+
+                            if (typeof a === "undefined")
+                            // or
+                            if (a === undefined)
+                            // or
+                            if (a == undefined) // but see note below
+                            ...but again, note that the last one is vague; it will also be true if a is null.
+
+                            Now, despite the above, the usual way to check for those is to use the fact that they're falsey:
+
+                            if (!a) {
+                                // `a` is falsey, which includes `undefined` and `null`
+                                // (and `""`, and `0`, and `NaN`, and [of course] `false`)
+                            }
+                            This is defined by ToBoolean in the spec.
+
+                            ...and what is the difference between the null and undefined?
+
+                            They're both values usually used to indicate the absence of something. undefined is the more generic one, used as the default value of variables until they're assigned some other value, as the value of function arguments that weren't provided when the function was called, and as the value you get when you ask an object for a property it doesn't have. But it can also be explicitly used in all of those situations. (There's a difference between an object not having a property, and having the property with the value undefined; there's a difference between calling a function with the value undefined for an argument, and leaving that argument off entirely.)
+
+                            null is slightly more specific than undefined: It's a blank object reference. JavaScript is loosely typed, of course, but not all of the things JavaScript interacts with are loosely typed. If an API like the DOM in browsers needs an object reference that's blank, we use null, not undefined. And similarly, the DOM's getElementById operation returns an object reference — either a valid one (if it found the DOM element), or null (if it didn't).
+
+                            Interestingly (or not), they're their own types. Which is to say, null is the only value in the Null type, and undefined is the only value in the Undefined type.
+
+                            What is the difference between "==" and "==="
+
+                            The only difference between them is that == will do type coercion to try to get the values to match, and === won't. So for instance "1" == 1 is true, because "1" coerces to 1. But "1" === 1 is false, because the types don't match. ("1" !== 1 is true.) The first (real) step of === is "Are the types of the operands the same?" and if the answer is "no", the result is false. If the types are the same, it does exactly what == does.
+
+                            Type coercion uses quite complex rules and can have surprising results (for instance, "" == 0 is true).
+
+
+                        FURTHER MORE :-
+
+
+
+                            HOPE U UNDERSTAND OTHERWISe  WHO CARES
+
+
+let name = 'RUdrava Mukherjee';
+let age = 19;
+const id=96;
+let passed = true;
+let score = undefined;
+let credit = null;
+
+
+CONSOLE:-
+        typeof name
+        "string"
+
+        typeof age
+        "number"
+
+        typeof id
+        "number"
+
+        typeof credit
+        "object"
+
+        typeof passed
+        "boolean"
+
+        typeof score
+        "undefined"
+
+
+        typeof credit
+        "object"
+-------------------------------------------------------------------------------------------------
+
+
+OBJECTS:-
+*********
+
+So objects are nothing but Dictionsaries in python
+
+so a  object can be declared as:-
+    let <objectName>={
+        key:value,
+        key:Value
+    }
+
+    the sytax is preety self explanatory so not going there
+    rather aknowldge a greater idea
+
+    ACCESSING A KEY :-
+    javaScript like python prroovides different ways of accessing a value   (or properties of objests)
+
+    the two ways are
+
+    1. dot notation:-   a property can be accesed usiing dot notations as
+
+                    <object_name>.key
+
+    2. INDEXING :-      property can also be accessed using indexing like
+
+                    <object_name>['keyname']
+
+USECASES
+
+    dot notation usage is more general but indexing is used when its
+    uncertain of the use to what would be his choice of key
+
+    if there is a option of variants of a mobile and each has  different prices
+        hoping the data of different mobiles are stored as differnt properties of an object
+        then , a user can choose any phone and its corresponding price can be displayed
+        of the key choosen by the user
+
+        which cannot be done using dot notation
+
+
+example:-
+let phone = {
+    price1: 10000,
+    price2: 2000,
+    price3: 3000
+};
+
+console.log('phone1 price:-',phone.price1,'\nphone2 price:-',phone.price2,'\nphone3 price:-',phone.price3)
+//let choice= prompt('choose any one of the model u want ')
+let choice = 'price1';      //we can take input for choice
+console.log('Price:-',phone[choice]);
+
+
+-------------------------------------------------------------------------------------------------------
+
+ARRAYS
+:::::::
+
+IS A LIST OF VARIABLES
+LIKE numbers or string literals
+
+arrays in JS is basically a object with each properties
+key ranging from [0 - n]
+
+ where n is the total no of elements
+
+
+also arrays are heterogeneous data storage sys
+ie it can store different types of data at the same time
+
+
+as ARRAYS is just an object (technically speeaking )
+we an access an array using the objects accessing methods
+
+___________________________________________________________________________________________________________
+
+
+conditions (if - else):
+    the concept is all the same as all the other language u know
+    like all the if blocks are run if the coondition inside parentheses is true
+    and it can have multiple conditions we can use else if s
+    and at the end if nothing is true then we encounter else block
+
+    SYNTAX:-
+
+    if (true/false) {
+        //block    }
+    else{       //optional
+        //block
+    }
+
+
+eg :-
+
+let grade = 3;
+
+if (grade<=10 && grade > 5){
+    console.log('Amazing');
+}   else if(grade <=5 && grade > 3 ){
+    console.log('Good');
+}   else if(grade <= 3 && grade > 0){
+    console.log('poor');
+}   else{
+    console.log('fail');
+}
+
+_______________________________________________________________________________________________________
+
+logical operator
+    it is alredy used in the abouve eg
+
+        1. && - AND - Returns  true if both the operands is true
+        2. || - OR  -Returns true if only one operands is true
+        3. !  - NOT -just reverses the operand ie false for true and true for false
+
+_______________________________________________________________________________________________________
+
+LOCAL AND GLOBAL (var and let):
+
+    in js like in other language there is no keyword for scope specifying a variable
+    but there is a leak in teh core creation of js ie
+
+    if we use let to declare any variable then it is local to the scope of its declaration
+    but at the same scope if we use var to declare some variable then it becomes global no
+    matter at what level of scope it is in
+
+eg:-
+
+
+        let imGlobal = 'Hey from main block';
+
+        if (true){
+            let imLocal = 'Hey from if block';
+            console.log(imGlobal);          //this gets printed as it is inside the local block of the declaration
+            console.log(imLocal);           w//this gets printed as it in in the same block of declaration
+
+        }
+
+        console.log(imGlobal);              //this gets printed cuz its in the same block as declarration
+        console.log(imLocal);               //this dosent get printed as it is not in the same block
+
+
+                        ***********************BUT*********************
+
+        //While declaration of imLocal if we dclare it using var instead of let then it would
+        print as by default var declared variables are global for some reason
+
+eg:-
+
+let imGlobal = 'Hey from main block';
+
+    if (true){
+    var imLocal = 'Hey from if block';      //this is now considerd to be global
+    console.log(imGlobal);
+    console.log(imLocal);
+    }
+
+console.log(imGlobal);
+console.log(imLocal);               //this gets printed as it is declared using var
+
+/*************************************************************/
+
+NOTE :-
+        if u donot mention var and let then it is just considered as a global variable
+        and it could breaka  code
+
+/*************************************************************/
+______________________________________________________________________________________________
+
+ARRAYS
+::::::
+
+const arr = [2,3,4];
+console.log(arr)                         //prints the whole list
+console.log(arr[1]);                        //accessing using indexing
+arr.push(5);                             // using push to insert element at the end
+arr[1]=6                                 //changing individual value
+console.log(arr[1])
+arr.pop();                               //eg of a function pop to delete element from the bottom
+console.log(arr[arr.length - 1]);       //accessing last value using length fun
+
+these are preety self explanatory
+if anny prob gSearch
+
+
+some more fun:-
+        .shift()        //theoritically deletes first element
+        .unshift(<param>)   //inserts at the start
+        .splice(startindex, no of ite to delete, replace with)
+
+____________________________________________________________________________________________
+
+Templating strings:-
+its like string formatting but in js
+we can implement it as
+
+console.log(`hi ${name}`);
+
+we use '  `  ' (tilde ) instead if quotes
+
+let name = 'rudra'
+age = 10
+console.log(`hi :- ${name}`);           //string templating
+console.log('hi :- ',name,'are u ',age,'?');      //this method can also be used
+                                                 // but templating is much more simpler and also has a wide range of uses
+
+_____________________________________________________________________________________________
+
+Functions
+::::::::
+
+to declare functions in js
+
+SYNTAX:-
+    let <functionName> = function(){
+        //block of code
+    }
+
+and then we call functions
+
+we can also pass parameters like so
+
+    let <functionName> = function( parameter1,paramete2 ... so on){
+        //block of code
+    }
+
+and while function call we need to specify oor pass that parameters other wise it
+would lead to errors
+
+<functionname>(param1,param2,... so on );
+
+eg :-
+    let hi = function() {
+    console.log('hi');
+    }
+    hi();
+
+
+    now passiing and receiving paramaeters
+
+    let name = 'rudra'
+    let age = 10
+    let hi =  function(name,age){
+        console.log(`hi ${name}, are u ${age}?`);   using paramaeters
+    }
+    hi(name,age);   passing name,age
+
+ RETURN METHOD:-
+ its all the same as u know already
+
+ eg:-
+    let sq = function(a,b){
+    return (a ** b);
+    }
+
+square=sq(4,5);
+console.log(square);        //this is possible
+console.log(sq(3,2));       //this is possible
+
+
+we can also have default values for parameters eg:-
+
+like in our sq fun if we dont pass on the power then we can set it to 2  always like
+
+
+let sq = function(a,b=2){
+    return (a ** b);
+    }
+
+now until we pass 'b' param we will get a squared val by default as b is set to 2
+
+______________________________________________________________________________________________
+
+FOR LOOP:-
+    IT WORKS THE SAME AND LOOKS THE SAMEE AS C LANG
+    SO AM JUST GONNA WRITE A CODE
+
+    months=['jan','feb','mar','apr','may','june','july','aug',,'sept','oct','nov','dec'];
+    for(let i = 0;i < months.length ; i++){
+    console.log(months.i);
+    }
+
+forEach loop :-
+            it is just like a for loop but in coontrast to for loop it is a method for only iterables
+
+            syntax
+
+            // months=['jan','feb','mar','apr','may','june','july','aug','sept','oct','nov','dec'];
+
+            // months.forEach(/*callbackfunc*/function(/*var to store val of current element of arr, index (i)*/month,index){
+            //     console.log(index + 1,month);
+            // })
+
+______________________________________________________________________________________________
+
+STRING methods
+
+just like python js alsoo has string methods
+
+like
+
+ toUpperCase()  - converts strring to uppercase
+
+length - gives back lenngth of string
+
+includes - checks if the passed string is   present or not
+
+trim - is just like strip by default removes white spaces
+
+    further check MDN for docs
+_____________________________________________________________________________
+
+Number methods
+
+number methods aree somewhat new unlike python
+like
+
+toFixed
+    to make a precision floating no
+
+this was the only one i found useful
+
+BUT  WAIT
+
+dont confuse y numbers didnt had functions or i corerect my self
+
+METHODS
+like sin ,cos,tan
+
+SURPRISE C CODERRS jS also has a math lib
+capable of making a whole scientific calc
+check this link
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates
+
+__________________________________________________________________________
+
+Arrays MEthods
+**************
+
+**Same shit like before**
+
+1. indexOf
+2. findIndex
+3.find
+
+Hard to explaing just cheeck out
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+
+

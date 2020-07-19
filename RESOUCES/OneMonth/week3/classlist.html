@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<title>classlist</title>
+	</head>
+	<body>
+		<div class="search-results"></div>
+		<script type="text/javascript">
+			var card = document.createElement("div");
+			card.className = "im here";
+			var searchResults = document.getElementsByClassName("search-results");
+			console.log(searchResults[0]);
+			searchResults[0].appendChild(card);
+		</script>
+	</body>
+</html>
