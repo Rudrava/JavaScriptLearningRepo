@@ -1,0 +1,99 @@
+variables:- 
+	declaration :- 	
+		const
+		var
+		let
+
+	Scope:- 
+		Global 
+		Function
+		Block
+
+	*HOISTING*
+
+
+Data Structures and Types
+
+	TYPES:-
+		undefined
+		boolean 
+		number 
+		BigInt 
+		String
+		Symbol
+
+	null - the diff of it between undef
+
+	OBJECT - as a whole 
+
+	FUNCTION - considered to be a data obj in js for
+				which comes in this list
+
+
+	STRUCTURES - 
+		array
+		map 
+		set 
+		date
+
+
+GENERAL TOPICS     important
+
+	Type convesion
+
+	equality - == vs ===
+
+
+
+LOOPS 	common to other languages
+
+	while 
+	do-while 
+	for 
+
+	break/continue
+
+	something NEW ?
+		for in 
+		for of 
+		.forEach - comes under arrays tho
+
+
+Control Flow
+
+	if else and its stuff
+
+	switch 
+
+	try catch throw  - like try/except/raise/finally in pyth 
+
+
+General expression and operators 
+
+	assingment,arithmetic,logical,conditional,and stuff 
+
+	ie general programmin needed stuff that u would need to knw
+
+	im not adding all cuz im just lazy
+
+
+
+FUNCTIONS 
+IT IS BASICALLY THE WHOLE JS
+
+	FUNCTION - declaration , expression, calling
+
+	parameters and arrguments
+
+	Scope
+
+	Arrow functions
+
+
+THIS CONCLUDES THE BEGINEER JOURNEY 
+
+
+
+
+
+

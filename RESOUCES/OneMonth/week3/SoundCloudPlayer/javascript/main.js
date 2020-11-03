@@ -21,7 +21,7 @@ var SoundCloudAPI = {
 	},
 
 	artist: function(link, name, photo){
-		console.log(name, photo);
+		// console.log(name, photo);
 		// aartist wrapper start
 		var artistWrapper = document.querySelector('.artist-showcase');
 		
@@ -108,17 +108,18 @@ var SoundCloudAPI = {
 
 	// add to playlist
 	adddToPlaylist: function (songURL) {
-		console.log('click');
+		// console.log('click');
 		SC.oEmbed(songURL, {
 		  auto_play: true
 		}).then(function(embed){
-		  console.log('oEmbed response: ', embed);
+		  // console.log('oEmbed response: ', embed);
 
 		  var playlist = document.querySelector(".js-playlist");
 
 		  var box = document.createElement('div');
 		  box.innerHTML = embed.html;
 		  playlist.insertBefore(box, playlist.firstChild);
+		  localStorage.setItem("key", playlist.innerHTML);
 		});
 	}
 
@@ -129,7 +130,7 @@ var submit = document.querySelector('.js-submit');
 submit.addEventListener('click', function(){
 	var artistWrapper = document.querySelector('.artist-showcase');
 	if (artistWrapper.contains(document.querySelector(".artistHeader"))) {
-    	 	console.log('contains artistHeader deleting');
+    	 	// console.log('contains artistHeader deleting');
     	 	document.querySelector(".artistHeader").remove()
     	 }
     if (artistWrapper.contains(document.querySelector(".artistImage"))) {
@@ -137,7 +138,7 @@ submit.addEventListener('click', function(){
     	 }
 
 	var searchText = search.value
-	console.log(searchText);
+	// console.log(searchText);
 	SoundCloudAPI.getTrack(searchText);
 })
 search.addEventListener('keypress', function(pressed){
@@ -145,7 +146,7 @@ search.addEventListener('keypress', function(pressed){
 	if (pressed.key === 'Enter'){
 		var artistWrapper = document.querySelector('.artist-showcase');
 		if (artistWrapper.contains(document.querySelector(".artistHeader"))) {
-	    	 	console.log('contains artistHeader deleting');
+	    	 	// console.log('contains artistHeader deleting');
 	    	 	document.querySelector(".artistHeader").remove()
 	    	 }
 	    if (artistWrapper.contains(document.querySelector(".artistImage"))) {
@@ -158,6 +159,7 @@ search.addEventListener('keypress', function(pressed){
 	}
 })
 
-
+var playlist = document.querySelector(".js-playlist");
+playlist.innerHTML = localStorage.getItem("key");
 SoundCloudAPI.init();
-SoundCloudAPI.getTrack("Ritviz");
+SoundCloudAPI.getTrack("Aryendra Khan");

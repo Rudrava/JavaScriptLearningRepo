@@ -74,10 +74,19 @@ html, body {
 	padding: 3%;
 	border-bottom: 3px solid hotpink;
 }
+@media screen and (max-width: 600px) {
+
+.artist-showcase > .artistHeader > h1{ 
+      font-size: 5em; 
+   }
+
+}
+@media screen and (min-width: 601px) {
 
 .artist-showcase > .artistHeader > h1{
-	font-size: 64px;
+  font-size: 7em;
 
+}
 }
 
 .artist-showcase > img {
